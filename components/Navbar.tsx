@@ -30,50 +30,64 @@ const Navbar = () => {
 
 	return (
 		<nav
-			className={`transition duration-500 ease-in-out px-2 md:px-6 py-6 md:py-8 border-b-2 border-gray-600 ${
+			className={`transition duration-500 ease-in-out px-2 md:px-6 py-4 md:py-8 border-b-2 border-gray-600 ${
 				changeNav && "nav_sticky"
 			}`}>
 			<div className="container mx-auto flex justify-between items-center">
 				<div>
 					<Link href="/">
 						<div>
-							<span className="text-purpleMain purple-glow font-bold text-4xl">
+							<span className="text-purpleMain purple-glow font-bold text-2xl md:text-4xl">
 								a
 							</span>
-							<span className="text-purpleMain purple-glow font-bold text-4xl">
+							<span className="text-purpleMain purple-glow font-bold text-2xl md:text-4xl">
 								n
 							</span>
-							<span className="text-purpleMain purple-glow font-bold text-4xl">
+							<span className="text-purpleMain purple-glow font-bold text-2xl md:text-4xl">
 								o
 							</span>
-							<span className="text-purpleMain purple-glow font-bold text-4xl">
+							<span className="text-purpleMain purple-glow font-bold text-2xl md:text-4xl">
 								n
 							</span>
-							<span className="text-purpleMain purple-glow font-bold text-4xl">
+							<span className="text-purpleMain purple-glow font-bold text-2xl md:text-4xl">
 								i
 							</span>
 						</div>
 					</Link>
 				</div>
-				<div className="hidden space-x-5 md:flex">
+				<div className="hidden space-x-5 md:flex md:items-center">
 					{!currentUser ? (
-						<Link href="/register">
-							<p className="text-gray-200 text-lg hover:underline hover:decoration-purpleMain">
-								Get Started
-							</p>
-						</Link>
+						<>
+							<Link href="/register">
+								<p className="text-gray-200 text-lg hover:underline hover:decoration-purpleMain">
+									Get Started
+								</p>
+							</Link>
+							<Link href="/faq">
+								<p className="text-gray-200 text-lg hover:underline hover:decoration-purpleMain">
+									FAQ
+								</p>
+							</Link>
+						</>
 					) : (
-						<Link href="/dashboard">
-							<p className="text-gray-200 text-lg hover:underline hover:decoration-purpleMain">
-								Dashboard
-							</p>
-						</Link>
+						<>
+							<Link href="/dashboard">
+								<p className="text-gray-200 text-lg hover:underline hover:decoration-purpleMain">
+									Dashboard
+								</p>
+							</Link>
+							<Link href="/faq">
+								<p className="text-gray-200 text-lg hover:underline hover:decoration-purpleMain">
+									FAQ
+								</p>
+							</Link>
+							<button
+								onClick={logOut}
+								className="bg-purpleMain text-white rounded px-6 py-2 text-md md:text-xl cursor-pointer hover:bg-purpleDark">
+								Logout
+							</button>
+						</>
 					)}
-					<Link href="/contact">
-						<p className="text-gray-200 text-lg hover:underline hover:decoration-purpleMain">
-							FAQ
-						</p>
-					</Link>
 				</div>
 				{/* ------ MOBILE MENU ------- */}
 				<button onClick={() => setNavOpen(true)} className="block md:hidden">

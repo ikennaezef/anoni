@@ -100,7 +100,9 @@ const Dashboard = () => {
 					</a>
 				</div>
 				<section className="mt-12">
-					<h2 className="text-gray-200 text-2xl text-center">Your messages</h2>
+					<h2 className="text-gray-200 text-xl md:text-2xl text-center">
+						Your messages
+					</h2>
 					<MessagesWrapper messages={messages} />
 				</section>
 			</div>

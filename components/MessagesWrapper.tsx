@@ -29,7 +29,7 @@ const MessagesWrapper = ({ messages }: Props) => {
 		<div className="min-h-[40vh] md:min-h-[60vh] my-6">
 			{pageCount > 0 && (
 				<h4 className="text-gray-200 mb-6 text-center">
-					Page {pageNumber} of {pageCount}({messageLength} messages...)
+					Page {pageNumber} of {pageCount} ({messageLength} messages...)
 				</h4>
 			)}
 			{messages

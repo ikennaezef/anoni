@@ -6,12 +6,14 @@ const FAQ = () => {
 		<div className="bg-darkMain min-h-screen relative overflow-hidden">
 			<Navbar />
 			<div className="container mx-auto px-2 py-6 min-h-[75vh]">
-				<h1 className="text-gray-200 text-2xl font-bold">FAQ</h1>
-				<h3 className="text-gray-400 text-lg font-medium">
+				<h1 className="text-gray-200 text-2xl font-bold underline decoration-purpleMain">
+					FAQ
+				</h1>
+				<h3 className="text-gray-400 text-md font-medium">
 					Here are some of the frequently asked questions about anoni
 				</h3>
 				<div className="mt-6">
-					<h2 className="text-gray-300 text-xl font-semibold">
+					<h2 className="text-gray-300 text-xl mb-2 font-semibold">
 						What is Anoni?
 					</h2>
 					<p className="text-gray-200">
@@ -23,7 +25,7 @@ const FAQ = () => {
 					</p>
 				</div>
 				<div className="mt-6">
-					<h2 className="text-gray-300 text-xl font-semibold">
+					<h2 className="text-gray-300 text-xl mb-2 font-semibold">
 						Can I change my username?
 					</h2>
 					<p className="text-gray-200">
@@ -33,7 +35,7 @@ const FAQ = () => {
 					</p>
 				</div>
 				<div className="mt-6">
-					<h2 className="text-gray-300 text-xl font-semibold">
+					<h2 className="text-gray-300 text-xl mb-2 font-semibold">
 						Can I know who sent me a message?
 					</h2>
 					<p className="text-gray-200">
@@ -42,7 +44,7 @@ const FAQ = () => {
 					</p>
 				</div>
 				<div className="mt-6">
-					<h2 className="text-gray-300 text-xl font-semibold">
+					<h2 className="text-gray-300 text-xl mb-2 font-semibold">
 						How does Anoni keep me anonymous?
 					</h2>
 					<p className="text-gray-200">

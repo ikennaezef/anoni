@@ -96,18 +96,18 @@ const SendMessage = () => {
 				<div className="p-4 h-full flex items-center justify-center w-full">
 					<div className="px-6 py-8 md:p-8 rounded-lg blurred min-w-84 w-84 md:w-96">
 						<div className="flex flex-col items-center mb-10">
-							<h2 className="text-purpleMain purple-glow bg-[#a955f70e] inline-block font-bold text-center text-3xl mb-2">
+							<h2 className="text-purpleMain purple-glow bg-[#a955f70e] inline-block font-bold text-center text-xl md:text-3xl mb-2">
 								Send Message
 							</h2>
-							<p className="text-lg text-gray-50 text-center mb-8">
+							<p className="text-md md:text-lg text-gray-50 text-center mb-8">
 								Send <span className="font-bold">{user?.username}</span> an
 								anonymous message
 							</p>
 							<textarea
-								rows={4}
+								rows={6}
 								value={messageInput}
 								onChange={(e) => setMessageInput(e.target.value)}
-								className="text-gray-100 border border-gray-400 outline-none focus:border-purple-400 p-2 rounded-md bg-purple-200/30 w-full resize-none"
+								className="text-gray-100 border border-gray-400 outline-none focus:border-purple-400 p-2 rounded-sm bg-purple-200/30 w-full resize-none"
 							/>
 							{error && <p className="text-red-500 my-1 text-sm">{error}</p>}
 							{success && (

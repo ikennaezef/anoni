@@ -22,10 +22,10 @@ const Message = ({ message }: MessageProps) => {
 				animate={{ opacity: 1 }}
 				transition={{ delay: 1 }}
 				className="p-5">
-				<h4 className="font-bold text-xl text-purple-500 mb-6">Message</h4>
+				<h4 className="font-bold text-xl text-purple-500 mb-4">Message</h4>
 				<div className="my-2">
 					<p className="text-gray-200 mb-3">{message.text}</p>
-					<p className="text-violet-200">{formattedDate}</p>
+					<p className="text-violet-300 text-sm">{formattedDate}</p>
 				</div>
 			</motion.div>
 		</motion.div>
