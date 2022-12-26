@@ -8,6 +8,7 @@ import {
 	setToStorage,
 } from "../utils/localStorage";
 import { UserType } from "../types";
+import { useRouter } from "next/router";
 
 export const useAppContext = () => {
 	return useContext<any>(AuthContext);
@@ -22,6 +23,8 @@ type PageProps = {
 export const ContextWrapper = ({ children }: PageProps) => {
 	const [currentUser, setCurrentUser] = useState<UserType | null>();
 	const [usernameModal, setUsernameModal] = useState<boolean>(false);
+	const [loading, setLoading] = useState<boolean>(false);
+	const router = useRouter();
 
 	useEffect(() => {
 		getFromStorage("currentUser") &&
@@ -48,9 +51,8 @@ export const ContextWrapper = ({ children }: PageProps) => {
 					authProvider: "google",
 					email: user.email,
 				});
-				setUsernameModal(true);
+				router.push("/change_username?new_user=true");
 			} else {
-				setUsernameModal(false);
 				const loggedInUser = docs.docs[0].data();
 				const { name, uid, username, email } = loggedInUser;
 				setCurrentUser({ displayName: name, uid, username, email });
@@ -83,6 +85,8 @@ export const ContextWrapper = ({ children }: PageProps) => {
 		userIsAuthenticated,
 		usernameModal,
 		setUsernameModal,
+		loading,
+		setLoading,
 	};
 
 	return <AuthContext.Provider value={values}>{children}</AuthContext.Provider>;

@@ -17,7 +17,7 @@ const Navbar = () => {
 	};
 
 	const checkNav = () => {
-		if (window.scrollY >= 90) {
+		if (window.scrollY >= 80) {
 			setChangeNav(true);
 		} else {
 			setChangeNav(false);
@@ -90,16 +90,16 @@ const Navbar = () => {
 							<IoCloseOutline color="inherit" fontSize="1.5rem" />
 						</button>
 						<div className="flex flex-col items-center pt-8">
-							<Link href="/faq">
-								<button className="text-white text-lg mb-4 hover:underline hover:decoration-purpleMain">
-									FAQ
-								</button>
-							</Link>
 							{!currentUser ? (
 								<>
 									<Link href="/register">
-										<button className="text-white text-lg hover:underline hover:decoration-purpleMain">
+										<button className="text-white text-lg mb-4 hover:underline hover:decoration-purpleMain">
 											Get Started
+										</button>
+									</Link>
+									<Link href="/faq">
+										<button className="text-white text-lg hover:underline hover:decoration-purpleMain">
+											FAQ
 										</button>
 									</Link>
 									<Link href="/register">
@@ -110,11 +110,21 @@ const Navbar = () => {
 								</>
 							) : (
 								<>
+									<Link href="/dashboard">
+										<button className="text-white text-lg mb-4 hover:underline hover:decoration-purpleMain">
+											Dashboard
+										</button>
+									</Link>
 									<button
 										onClick={changeUsernameHandler}
-										className="text-white text-lg hover:underline hover:decoration-purpleMain">
+										className="text-white text-lg mb-4 hover:underline hover:decoration-purpleMain">
 										Change Username
 									</button>
+									<Link href="/faq">
+										<button className="text-white text-lg hover:underline hover:decoration-purpleMain">
+											FAQ
+										</button>
+									</Link>
 									<button
 										onClick={logOut}
 										className="inline-block bg-purpleDark text-white rounded px-6 py-3 mt-16 text-lg cursor-pointer hover:bg-purpleDark">
