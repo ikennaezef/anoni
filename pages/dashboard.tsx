@@ -9,13 +9,7 @@ import {
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import { BsShareFill, BsWhatsapp } from "react-icons/bs";
-import {
-	Footer,
-	Loader,
-	MessagesWrapper,
-	Navbar,
-	UsernameModal,
-} from "../components";
+import { Footer, Loader, MessagesWrapper, Navbar } from "../components";
 import { useAppContext } from "../context";
 import { db } from "../firebase/config";
 import { generateId } from "../utils/random";
@@ -49,8 +43,8 @@ const Dashboard = () => {
 		if (navigator.share) {
 			navigator
 				.share({
-					title: `Send me an anonymous message on anoni. I won't know who sent it`,
-					text: `Send me an anonymous message on anoni. I won't know who sent it`,
+					title: `Send me an anonymous message on anoni. I won't know who sent it😉`,
+					text: `Send me an anonymous message on anoni. I won't know who sent it😉`,
 					url: `/send_message/${currentUser.uid}`,
 				})
 				.then(() => console.log("Thanks for sharing"))
@@ -60,7 +54,7 @@ const Dashboard = () => {
 		}
 	};
 
-	const waShareText = `https://api.whatsapp.com/send?text=Send me an anonymous message on anoni. I won't know who sent it... https://anoni.netlify.app/send_message/${currentUser?.uid}`;
+	const waShareText = `https://api.whatsapp.com/send?text=Send me an anonymous message on anoni. I won't know who sent it😉... https://anoni.netlify.app/send_message/${currentUser?.uid}`;
 
 	useEffect(() => {
 		if (!currentUser) {
@@ -105,9 +99,7 @@ const Dashboard = () => {
 					</a>
 				</div>
 				<section className="mt-12">
-					<h2 className="text-gray-200 text-2xl text-center">
-						Here are your messages
-					</h2>
+					<h2 className="text-gray-200 text-2xl text-center">Your messages</h2>
 					<MessagesWrapper messages={messages} />
 				</section>
 			</div>

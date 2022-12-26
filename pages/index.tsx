@@ -6,7 +6,7 @@ import { BsStars } from "react-icons/bs";
 
 export default function Home() {
 	return (
-		<div className={`bg-darkMain min-h-screen`}>
+		<div className={`bg-darkMain min-h-screen relative overflow-hidden`}>
 			<Navbar />
 			<main>
 				<Banner />
@@ -26,9 +26,9 @@ export default function Home() {
 									<div>
 										<BiMask color="#a855f7" size="3rem" />
 									</div>
-									<h5 className="text-xl font-semibold text-gray-100 mb-2 mt-4">
+									<h4 className="text-xl font-semibold text-gray-100 mb-2 mt-4">
 										Anonymity
-									</h5>
+									</h4>
 									<p className="text-lg text-gray-300 text-center">
 										Our Platform ensures your privacy so that you stay anonymous
 										everytime you send someone a secret message. You are
@@ -39,9 +39,9 @@ export default function Home() {
 									<div>
 										<BsStars color="#a855f7" size="3rem" />
 									</div>
-									<h5 className="text-xl font-semibold text-gray-100 mb-2 mt-4">
+									<h4 className="text-xl font-semibold text-gray-100 mb-2 mt-4">
 										Easy To Use
-									</h5>
+									</h4>
 									<p className="text-lg text-gray-300 text-center">
 										We are constantly working on Anoni as a platform to make it
 										as user friendly as possible. As of now you can just
@@ -53,9 +53,9 @@ export default function Home() {
 									<div>
 										<BiLockAlt color="#a855f7" size="3rem" />
 									</div>
-									<h5 className="text-xl font-semibold text-gray-100 mb-2 mt-4">
+									<h4 className="text-xl font-semibold text-gray-100 mb-2 mt-4">
 										Safe & Secure
-									</h5>
+									</h4>
 									<p className="text-lg text-gray-300 text-center">
 										Safety of our users using this anonymous messaging platform
 										is very important for us. We have got reporting systems so

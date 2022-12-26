@@ -1,11 +1,11 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { Footer } from "../components";
 import { FaGoogle } from "react-icons/fa";
 import { useAppContext } from "../context";
-import { auth } from "../firebase/config";
 
 const Register = () => {
+	const [calledPush, setCalledPush] = useState<boolean>(false);
 	const { signInWithGoogle, currentUser } = useAppContext();
 	const router = useRouter();
 
@@ -18,7 +18,13 @@ const Register = () => {
 	};
 
 	useEffect(() => {
-		currentUser && router.push("/dashboard");
+		if (currentUser) {
+			if (calledPush) {
+				return;
+			}
+			router.push("/dashboard");
+			setCalledPush(true);
+		}
 	}, [currentUser]);
 
 	return (
