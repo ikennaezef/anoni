@@ -54,7 +54,7 @@ const Dashboard = () => {
 		}
 	};
 
-	const waShareText = `https://api.whatsapp.com/send?text=Send me an anonymous message on anoni. I won't know who sent it😉... https://anoni.netlify.app/send_message/${currentUser?.uid}`;
+	const waShareText = `https://api.whatsapp.com/send?text=Send me an anonymous message on anoni. I won't know who sent it😉... https://anoni.vercel.app/send_message/${currentUser?.uid}`;
 
 	useEffect(() => {
 		if (!currentUser) {
