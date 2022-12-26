@@ -29,7 +29,7 @@ const FAQ = () => {
 					<p className="text-gray-200">
 						Yes, you can change your username but ONLY when you are logged in.
 						To change your Anoni username, go to the menu on the app and tap on
-						"Change Username" button. It's that simple!
+						{"'Change Username'"} button. {"It's"} that simple!
 					</p>
 				</div>
 				<div className="mt-6">

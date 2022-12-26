@@ -93,6 +93,7 @@ const Dashboard = () => {
 					<a
 						href={waShareText}
 						target="_blank"
+						rel="noreferrer"
 						className="flex justify-center items-center bg-green-500 px-4 py-2 rounded-md text-white">
 						<BsWhatsapp fontSize="1.2rem" />
 						<span className="ml-2">Share on WhatsApp</span>

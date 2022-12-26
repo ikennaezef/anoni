@@ -42,8 +42,8 @@ const MessagesWrapper = ({ messages }: Props) => {
 				))}
 			{messageLength < 1 && (
 				<p className="text-center text-gray-200 text-xl px-2">
-					You don't have any messages yet. Share your link to your friends and
-					ask them to write something..
+					You {"don't"} have any messages yet. Share your link to your friends
+					and ask them to write something..
 				</p>
 			)}
 			{pageCount > 1 && (
