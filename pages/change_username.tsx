@@ -12,6 +12,7 @@ import { Footer } from "../components";
 import { useAppContext } from "../context";
 import { db } from "../firebase/config";
 import { setToStorage } from "../utils/localStorage";
+import { FaSpinner } from "react-icons/fa";
 
 type Props = {};
 
@@ -19,16 +20,18 @@ const ChangeUsername = (props: Props) => {
 	const [error, setError] = useState<string | null>(null);
 	const [success, setSuccess] = useState<string | null>(null);
 	const [username, setUsername] = useState("");
+	const [loading, setLoading] = useState<boolean>(false);
 
 	const router = useRouter();
 	const { new_user } = router.query;
 
-	const { currentUser, setCurrentUser, setUsernameModal } = useAppContext();
+	const { currentUser, setCurrentUser } = useAppContext();
 
 	const usernameHandler = async () => {
 		if (username.length < 4) {
 			return setError("The username should be at least 4 characters long");
 		} else {
+			setLoading(true);
 			setError(null);
 			try {
 				const userQuery = query(
@@ -42,12 +45,14 @@ const ChangeUsername = (props: Props) => {
 					});
 					setCurrentUser({ ...currentUser, username });
 					setToStorage("currentUser", { ...currentUser, username });
+					setLoading(false);
 					setSuccess("Username change successful");
 					setTimeout(() => {
 						router.push("/dashboard");
 					}, 1000);
 				});
 			} catch (error) {
+				setLoading(false);
 				setError("An error occured");
 				console.log("ERROR", error);
 			}
@@ -92,9 +97,16 @@ const ChangeUsername = (props: Props) => {
 							)}
 							<div className="flex justify-between space-x-4 mt-6">
 								<button
+									disabled={loading}
 									onClick={usernameHandler}
-									className="bg-purpleDark text-white rounded-sm px-4 py-2 mt-3">
-									Set Username
+									className="bg-purpleDark text-white rounded-sm px-4 py-2 mt-3 min-w-[7rem] text-center">
+									{loading ? (
+										<span className="animate-spin flex justify-center w-full text-center">
+											<FaSpinner color="inherit" />
+										</span>
+									) : (
+										"Set Username"
+									)}
 								</button>
 								{new_user === "false" && (
 									<Link href="/dashboard">
