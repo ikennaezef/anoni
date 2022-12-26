@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import { Footer, GetStartedModal, Loader, Navbar } from "../../components";
+import { Footer, GetStartedModal, Loader, Meta } from "../../components";
 import { BiPaperPlane } from "react-icons/bi";
 import {
 	addDoc,
@@ -12,7 +12,6 @@ import {
 } from "firebase/firestore";
 import { generateId } from "../../utils/random";
 import { db } from "../../firebase/config";
-import { setUserProperties } from "firebase/analytics";
 import { useAppContext } from "../../context";
 
 const SendMessage = () => {
@@ -91,6 +90,7 @@ const SendMessage = () => {
 
 	return (
 		<div className="bg-darkMain min-h-screen relative">
+			<Meta title="Send me an anonymous message on anoni😉" />
 			{modalIsVisible && <GetStartedModal closeHandler={closeModal} />}
 			<div className="flex flex-col h-screen justify-between">
 				<div className="p-4 h-full flex items-center justify-center w-full">
