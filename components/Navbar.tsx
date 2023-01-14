@@ -76,6 +76,11 @@ const Navbar = () => {
 									Dashboard
 								</p>
 							</Link>
+							<button
+								onClick={changeUsernameHandler}
+								className="text-white text-lg hover:underline hover:decoration-purpleMain">
+								Change Username
+							</button>
 							<Link href="/faq">
 								<p className="text-gray-200 text-lg hover:underline hover:decoration-purpleMain">
 									FAQ
